@@ -3,7 +3,7 @@ package com.saptarshi.das.lowleveldesigns.collections.hashmaps;
 public class CustomHashMap<K, V> {
     private static final int INITIAL_CAPACITY = 1 << 4;
     private static final int MAXIMUM_CAPACITY = 1 << 30;
-    private Entry<K,V>[] entries;
+    private final Entry<K, V>[] entries;
 
     public CustomHashMap() {
         entries = new Entry[INITIAL_CAPACITY];
@@ -24,7 +24,7 @@ public class CustomHashMap<K, V> {
         return (n < 0) ? 1 : (n > MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n - 1;
     }
 
-    class Entry<K, V> {
+    static class Entry<K, V> {
         public K key;
         public V value;
         public Entry<K, V> next;
